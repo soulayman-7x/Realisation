@@ -201,15 +201,15 @@ header .navbar .links .link:hover img {
     filter: drop-shadow(0 0 5px var(--accent-color));
 }
 
-header .navbar .links .link  a {
+header .navbar .links .link a {
     color: var(--text-color);
     font-weight: 500;
     font-size: 1.05rem;
     letter-spacing: 0.5px;
     transition: color 0.3s ease;
-           display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 header .navbar .links .link:hover p a {
@@ -492,7 +492,7 @@ header .navbar .links .link:hover p a {
     flex-direction: column;
     gap: 20px;
     animation: fadeIn 0.8s ease-in-out;
-    
+
 }
 
 .project h3 {
@@ -626,28 +626,32 @@ header .navbar .links .link:hover p a {
 
 /* Responsive */
 
-@media  (max-width: 768px) {
+@media (max-width: 768px) {
     header .navbar {
         width: 80px;
         align-items: center;
         background-color: transparent;
         border-right: none;
     }
-     header .navbar .logo {
-        display: none;
-     }
-    header .navbar .logo p { 
+
+    header .navbar .logo {
         display: none;
     }
+
+    header .navbar .logo p {
+        display: none;
+    }
+
     header .navbar .logo img {
         margin: 0 10px;
-            
+
     }
+
     header .navbar .links {
         width: 75px;
-        padding:0;
+        padding: 0;
         backdrop-filter: blur(10px);
-        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         background-color: rgba(20, 20, 20, 0.8);
         border-radius: 15px;
         position: fixed;
@@ -655,64 +659,80 @@ header .navbar .links .link:hover p a {
         left: -100px;
         transform: translateY(-50%);
     }
+
     header .navbar .nav-icon {
         display: block;
     }
-    header .navbar .nav-icon:hover + .links, 
+
+    header .navbar .nav-icon:hover+.links,
     header .navbar .links:hover {
         left: 60px;
     }
+
     header .navbar .links .link p {
         display: none;
     }
+
     header .navbar .links .link img {
         width: 40px;
     }
+
     header .navbar .links .link:hover {
         transform: translateX(0);
     }
+
     .home {
         padding: 50px 20px 20px 20px;
         width: 100%;
         gap: 4rem;
         text-align: center;
     }
+
     .home .first-content {
         flex: 0 0 100%;
         text-align: center;
     }
+
     .home .first-content h1 {
         font-size: 2rem;
         margin: 20px 0;
     }
+
     .home .img-box {
         flex: 0 0 100%;
         width: 130px;
     }
+
     .home .img-box img {
         display: none;
     }
+
     h2 {
         font-size: 2.4rem;
         margin: 0 10px 30px 10px;
     }
+
     /*About*/
     .about {
         padding: 30px 20px 20px 20px;
         align-items: center;
     }
+
     .skills {
         flex: 0 0 100%;
         padding: 15px;
     }
+
     .skills .skill img {
         width: 30px;
     }
+
     .about-text {
         flex: 0 0 100%;
         margin-top: 30px;
         padding: 15px 5px;
     }
+
     .about-text h3 {
         font-size: 1.5rem;
     }
@@ -721,6 +741,7 @@ header .navbar .links .link:hover p a {
     .project {
         padding: 30px 20px;
     }
+
     .project-gallery {
         grid-template-columns: 1fr;
         gap: 15px;
@@ -734,6 +755,7 @@ header .navbar .links .link:hover p a {
         padding: 10px 10px;
         z-index: 1000;
     }
+
     .footer .socialmedia a img {
         width: 25px;
     }
