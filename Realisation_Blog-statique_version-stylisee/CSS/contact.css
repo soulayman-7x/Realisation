@@ -95,6 +95,7 @@
     border-left: 5px solid var(--primary-color);
     border-radius: 15px;
     font-size: 1.1rem;
+    font-weight: 600;
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     color: var(--background-color);
     transition: all 0.3s ease;
@@ -108,5 +109,37 @@
 
 .contact-info img {
     width: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    section {
+        padding: 20px 20px 20px 90px;
+    }
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    .container {
+        padding: 10px;
+    }
+    .contact-form {
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+    .contact-form h3{
+        text-align: center;
+    }
+    .contact-form form {
+        margin: 0;
+    }
+    .contact-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .contact-info a {
+        font-size: 0.9rem;
+        
+    }
 }
 
