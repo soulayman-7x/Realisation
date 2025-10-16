@@ -180,6 +180,39 @@
 }
 
 /* Responsive Design */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .top-page,
+    .hobbies-section {
+        padding: 40px 20px 40px 250px;
+        margin-left: 0;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .personal-info {
+        padding: 20px 30px;
+        font-weight: 600;
+    }
+
+    .personal-info li {
+        padding: 15px 20px;
+        font-size: 1rem;
+    }
+    .hobbies-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .hobbies-image img {
+        max-width: 380px;
+    }
+
+    .hobbies-text {
+        padding: 40px 20px 40px 20px;
+        width: 100%;
+    }
+}
+
 @media (max-width: 768px) {
     body img {
         width: 60px;

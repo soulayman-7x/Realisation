@@ -626,6 +626,75 @@ header .navbar .links .link:hover p a {
 
 /* Responsive */
 
+@media (min-width: 768px) and (max-width: 1024px) {
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    .home {
+        padding: 50px 30px 30px 250px;
+        gap: 1rem;
+    }
+
+    .home .first-content {
+        flex: 0 0 100%;
+        text-align: center;
+    }
+
+    .home .first-content h1 {
+        font-size: 2.2rem;
+        margin: 20px 0;
+    }
+
+    .home .img-box {
+        flex: 0 0 100%;
+        width: 200px;
+        margin: 0 auto;
+    }
+
+    .about {
+        padding: 50px 30px 30px 250px;
+    }
+
+    .skills {
+        flex: 0 0 100%;
+        padding: 20px;
+    }
+
+    .skills .skill img {
+        width: 40px;
+    }
+
+    .about-text {
+        flex: 0 0 100%;
+        margin-top: 30px;
+        padding: 15px 5px;
+    }
+
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+
+    .project {
+        padding: 50px 30px 30px 250px;
+    }
+
+    .project-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+
+    .footer {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+        padding: 15px 10px;
+    }
+
+    .footer .socialmedia a img {
+        width: 28px;
+    }
+}
+
 @media (max-width: 768px) {
     header .navbar {
         width: 80px;

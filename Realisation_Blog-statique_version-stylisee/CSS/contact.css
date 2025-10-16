@@ -112,6 +112,35 @@
 }
 
 /* Responsive Design */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+
+    .contact-form {
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+
+    .contact-form h3 {
+        text-align: center;
+    }
+
+    .contact-form form {
+        margin: 0;
+    }
+
+    .contact-info {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .contact-info a {
+        font-size: 1rem;
+
+    }
+}
+
 @media (max-width: 768px) {
     section {
         padding: 20px;
