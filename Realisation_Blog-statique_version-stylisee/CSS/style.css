@@ -624,6 +624,19 @@ header .navbar .links .link:hover p a {
     }
 }
 
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+}
 /* Responsive */
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -720,13 +733,14 @@ header .navbar .links .link:hover p a {
         width: 75px;
         padding: 0;
         backdrop-filter: blur(10px);
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 0 10px var(--primary-color);
         background-color: rgba(20, 20, 20, 0.8);
         border-radius: 15px;
         position: fixed;
         top: 50%;
         left: -100px;
         transform: translateY(-50%);
+        transition: all 0.6s ease;
     }
 
     header .navbar .nav-icon {
