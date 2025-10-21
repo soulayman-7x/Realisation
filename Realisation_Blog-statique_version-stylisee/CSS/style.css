@@ -80,6 +80,45 @@ a:hover {
     color: var(--accent-color);
 }
 
+/* the ticker */
+
+.ticker {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.7);
+    backdrop-filter: blur(5px);
+    overflow: hidden;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 800;
+}
+
+.ticker__wrap {
+    display: inline-block;
+    white-space: nowrap;
+    animation: tickerMove 18s linear infinite;
+}
+
+.ticker__wrap span {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 18px;
+}
+
+@keyframes tickerMove {
+    0% {
+        transform: translateX(90%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
 /* ### HEADER ### */
 header .navbar {
     position: fixed;
@@ -181,7 +220,7 @@ header .navbar .links .link {
     transition: all 0.3s ease-in-out;
 }
 
-header .navbar .links .link:hover {
+header .navbar .links .link:hover, .active{
     background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
     transform: translateX(5px);
     box-shadow: 0 0 12px var(--primary-color);
@@ -196,7 +235,7 @@ header .navbar .links .link img {
     transition: all 0.3s ease;
 }
 
-header .navbar .links .link:hover img {
+header .navbar .links .link:hover img, .active img {
     transform: rotate(8deg) scale(1.1);
     filter: drop-shadow(0 0 5px var(--accent-color));
 }
@@ -336,6 +375,7 @@ header .navbar .links .link:hover p a {
     transform: scale(1.05) rotate(3deg);
     box-shadow: 0 0 35px 10px var(--accent-color);
 }
+
 
 /* ### ABOUT ### */
 .about {
@@ -482,7 +522,6 @@ header .navbar .links .link:hover p a {
     transform: scale(1.05);
     filter: drop-shadow(0 0 10px var(--accent-color));
 }
-
 
 /*Projects*/
 
@@ -637,6 +676,7 @@ header .navbar .links .link:hover p a {
 ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
 }
+
 /* Responsive */
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -751,7 +791,6 @@ header .navbar .links .link:hover p a {
     header .navbar .links:hover {
         left: 60px;
     }
-
     header .navbar .links .link p {
         display: none;
     }
@@ -760,7 +799,7 @@ header .navbar .links .link:hover p a {
         width: 40px;
     }
 
-    header .navbar .links .link:hover {
+    header .navbar .links .link:hover, .active{
         transform: translateX(0);
     }
 
