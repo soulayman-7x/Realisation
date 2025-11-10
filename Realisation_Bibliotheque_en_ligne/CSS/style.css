@@ -262,6 +262,57 @@ header i {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-blue);
 }
 
+/* expensive card */
+
+.expensive {
+    background: linear-gradient(135deg, #1a1a1a, #3b2f00 40%, #8b7500 80%, #1a1a1a);
+    border: 2px solid #ffd700;
+    box-shadow:
+        0 0 30px rgba(255, 215, 0, 0.6),
+        inset 0 0 10px rgba(255, 255, 255, 0.2),
+        0 0 60px rgba(255, 215, 0, 0.4);
+    padding: 25px;
+    text-align: center;
+    color: #fffbe6;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.expensive::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.8),
+            rgba(255, 255, 255, 0.2));
+    transform: skewX(-25deg);
+    transition: 0.8s;
+}
+
+.expensive:hover::before {
+    left: 130%;
+    transition: 0.8s;
+}
+
+.expensive:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 0 40px rgba(255, 215, 0, 0.9),
+        0 0 80px rgba(255, 215, 0, 0.6);
+}
+
+.books_container img:hover {
+    transform: none;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-blue);
+}
+
 /* Card title */
 .books_container .card h3 {
     font-size: 22px;
@@ -393,13 +444,17 @@ footer .footer-content span {
 }
 
 @media (max-width: 767px) {
-    header h1, header i {
+
+    header h1,
+    header i {
         font-size: 22px;
     }
+
     button.primary-btn {
         padding: 5px;
         font-size: 12px;
     }
+
     .books_container .card .reserved::after {
         font-size: 3rem;
     }

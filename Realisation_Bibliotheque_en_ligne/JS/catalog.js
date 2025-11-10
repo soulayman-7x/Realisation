@@ -18,9 +18,16 @@ function showBooks(filterBooks = library) {
   let container = document.getElementById('books-container');
   container.innerHTML = '';
 
+  let expensiveCount = 0;
+
   filterBooks.forEach(book => {
     let card = document.createElement('div');
     card.className = 'card';
+
+    if (book.price > 300) {
+      card.className = 'expensive card';
+      expensiveCount++
+    }
 
     const reserveButton = book.available
       ? `<button class="to-book" onclick="reserveBook(${book.code})">To book</button>`
@@ -38,7 +45,7 @@ function showBooks(filterBooks = library) {
     `;
     container.appendChild(card);
   });
-  updateState();
+  updateState(expensiveCount);
 
   //unreserved 
   document.querySelectorAll('.unreserved').forEach(div => {
@@ -86,11 +93,12 @@ function reserveBook(code) {
   }
 }
 
-function updateState() {
+function updateState(expensiveCount) {
   let total = library.length;
   let available = library.filter(book => book.available).length;
   document.getElementById('stats').innerHTML = `
     <p>Total Books : <span> ${total}</span></p>
+    <p>Expensive Books : <span>${expensiveCount}</span></p>
     <p>Available Books : <span>${available}</span></p>
   `;
 }
