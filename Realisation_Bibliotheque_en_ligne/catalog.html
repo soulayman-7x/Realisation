@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Catalog</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="assets/icons/book.png">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <i class="fa-solid fa-book-open-reader"></i>
+            <h1>7X Library</h1>
+            <a href="add-book.html"><button class="primary-btn"> + Add Book</button></a>
+        </header>
+        <main id="book-list" class="book-list">
+            <div class="top-btns">
+                <div class="search-box">
+                    <input type="text" id="search-input" class="search">
+                    <i class="fa-solid fa-search"></i>
+                </div>
+                <div class="sort-buttons">
+                    <button id="trierAsc"><i class="asc fa-solid fa-arrow-up-a-z"></i></button>
+                    <button id="trierDesc"><i class="desc fa-solid fa-arrow-down-a-z"></i> </button>
+                </div>
+            </div>
+            <div class="books_container" id="books-container">
+                <!-- -->
+            </div>
+        </main>
+        <footer>
+            <div class="footer-content" id="stats"></div>
+        </footer>
+    </div>
+
+    <script src="JS/catalog.js"></script>
+</body>
+
+</html>

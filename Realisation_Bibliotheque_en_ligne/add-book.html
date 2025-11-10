@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add book Page</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/add.css">
+    <link rel="icon" href="assets/icons/book.png">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/icons/book2.png" alt="book icon">
+            <h1>Add a New Book</h1>
+            <a href="catalog.html"><button class="primary-btn">Library</button></a>
+        </header>
+        <main>
+            <div class="form-box" id="form-box">
+                <form id="book-form">
+                    <input type="number" id="code" placeholder="Book Code" required>
+                    <input type="text" id="title" placeholder="Book Title" required>
+                    <input type="text" id="author" placeholder="Author" required>
+                    <input type="number" id="year" placeholder="Year" required>
+                    <input type="number" id="price" placeholder="Price (DH)" required>
+                    <input type="file" id="image" accept="image/*">
+                    <label for="available">Available</label>
+                        <input type="checkbox" id="available"> 
+                    <button type="submit" class="primary-btn">Add Book</button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="JS/add-book.js"></script>
+
+</body>
+
+</html>

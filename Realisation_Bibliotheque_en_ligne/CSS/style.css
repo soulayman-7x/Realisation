@@ -1,0 +1,406 @@
+:root {
+    --bg-dark: #070D1A;
+    --bg-gradient: radial-gradient(at top, #141B3B, #070D1A 70%);
+    --bg-stars-image: url('../assets/images/7X-STARS-BG.png');
+    --bg-logo-image: url('../assets/icons/LOGO7X-V3.png');
+    /* Text Colors */
+    --text-primary: #E0E0FF;
+    --text-heading: #7DF9FF;
+    --text-secondary: #BBBBBB;
+    --text-price-green: #90EE90;
+    /* Accent / Neon Glow */
+    --neon-blue: #00FFFF;
+    --neon-purple: #EE82EE;
+    --neon-gradient: linear-gradient(90deg, #00FFFF, #EE82EE);
+    /* Card / Shadows */
+    --card-bg: rgba(20, 27, 59, 0.5);
+    --card-shadow: rgba(0, 0, 0, 0.7);
+    /* Buttons */
+    --btn-primary-bg: #4D7BFF;
+    --btn-primary-hover: #00FFFF;
+    --btn-primary-text: #070D1A;
+    --btn-delete-bg: #FF6347;
+    --btn-delete-hover: #DC143C;
+    /* Fonts */
+    --font-heading: 'Orbitron', sans-serif;
+    --font-subheading: 'Rajdhani', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+/* Reset — might add scrollbar style later */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background: var(--bg-dark) var(--bg-stars-image) no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Note: maybe add subtle animation later */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-logo-image) no-repeat center center fixed;
+    background-size: contain;
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* General container (still not sure about padding) */
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Main buttons (neon theme) */
+button.primary-btn {
+    background: var(--neon-purple);
+    color: var(--btn-primary-text);
+    border: none;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px var(--neon-purple);
+}
+
+button.primary-btn:hover {
+    background-color: var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+    transform: translateY(-2px);
+}
+
+button.btn {
+    color: var(--btn-delete-bg);
+    background: none;
+    border: none;
+    padding: 8px;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+button.btn:hover {
+    color: var(--btn-delete-hover);
+    transform: scale(1.1);
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(90deg, #101530, #1F2937, #101530);
+    border-top: 2px solid var(--neon-blue);
+    border-bottom: 2px solid var(--neon-purple);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 20px rgba(238, 130, 238, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    z-index: 999;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-size: 32px;
+    color: var(--neon-blue);
+    font-family: var(--font-heading);
+    text-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue);
+}
+
+header i {
+    font-size: 30px;
+    color: var(--neon-purple);
+    filter: drop-shadow(0 0 15px var(--neon-blue));
+}
+
+.top-btns {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.sort-buttons {
+    width: 100px;
+}
+
+.sort-buttons button {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    padding-bottom: 10px;
+
+}
+
+.sort-buttons button .asc,
+.sort-buttons button .desc {
+    background-color: rgba(25, 30, 50, 0.7);
+    border: 2px solid var(--neon-purple);
+    box-shadow:
+        inset 0 0 15px rgba(0, 0, 0, 0.8),
+        0 0 10px var(--neon-blue);
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 50%;
+    color: var(--neon-blue);
+}
+
+/* Search box area */
+.search-box {
+    position: relative;
+    margin: 0 20px;
+    padding-bottom: 10px;
+}
+
+/* Slightly too wide on mobile — maybe adjust later */
+.search {
+    background-color: rgba(25, 30, 50, 0.7);
+    outline: none;
+    border: 2px solid var(--neon-purple);
+    box-shadow:
+        inset 0 0 15px rgba(0, 0, 0, 0.8),
+        0 0 10px var(--neon-blue);
+    padding: 12px 45px;
+    font-size: 18px;
+    border-radius: 30px;
+    /* width: 350px; */
+    /* max-width: 500px; */
+    transition: all 0.4s ease-in-out;
+    color: var(--text-primary);
+}
+
+.search:focus {
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.9),
+        0 0 35px 10px var(--neon-blue);
+    border-color: var(--neon-blue);
+}
+
+.search-box i {
+    position: absolute;
+    left: 1.2rem;
+    top: 15px;
+    color: var(--neon-blue);
+    font-size: 20px;
+}
+
+.books_container {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 50px;
+}
+
+/* Neon glow card style */
+.books_container .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid;
+    border-image: var(--neon-gradient) 1;
+    padding: 25px;
+    background-color: var(--card-bg);
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, 0.4),
+        0 0 25px rgba(238, 130, 238, 0.4);
+    position: relative;
+    transition: all 0.4s ease;
+}
+
+.books_container .card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow:
+        0 0 35px 5px var(--neon-blue),
+        0 0 35px 5px var(--neon-purple);
+}
+
+/* Book image hover zoom (fun effect) */
+.books_container img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    cursor: grab;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.books_container img:hover {
+    transform: translateY(-8px) scale(1.2) rotate(10deg);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-blue);
+}
+
+/* Card title */
+.books_container .card h3 {
+    font-size: 22px;
+    text-transform: uppercase;
+    font-family: var(--font-subheading);
+    color: var(--neon-blue);
+    text-shadow: 0 0 5px var(--neon-blue);
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Secondary details */
+.books_container .card .author,
+.books_container .card .year {
+    color: var(--text-secondary);
+    font-size: 15px;
+    text-align: center;
+}
+
+/* Price badge */
+.books_container .card .price {
+    background-color: rgba(40, 167, 69, 0.4);
+    padding: 8px 15px;
+    font-weight: 700;
+    border-radius: 6px;
+    color: var(--text-price-green);
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.6);
+}
+
+.books_container .card .to-book {
+    margin-top: 14px;
+    cursor: pointer;
+    border: 2px solid var(--neon-blue);
+    background: transparent;
+    padding: 8px 90px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: var(--neon-blue);
+}
+
+.books_container .card .reserved {
+    position: absolute;
+    cursor: grab;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.books_container .card .reserved::after {
+    content: "RESERVED";
+    position: absolute;
+    font-size: 4rem;
+    left: 10px;
+    top: 40%;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.books_container .card .bottom-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.books_container .card .bottom-card .available {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.books_container .card .bottom-card .available span {
+    color: var(--text-price-green);
+    font-size: 18px;
+}
+
+.books_container .card .bottom-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%;
+    height: 2px;
+    width: 80%;
+    background: var(--neon-gradient);
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+/* Footer section */
+footer {
+    background: linear-gradient(90deg, #101530, #1F2937, #101530);
+    border-top: 2px solid var(--neon-purple);
+    box-shadow: 0 0 20px rgba(238, 130, 238, 0.5);
+}
+
+footer .footer-content {
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+footer .footer-content span {
+    color: var(--neon-blue);
+    font-weight: 700;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-gradient);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--neon-gradient);
+}
+
+@media (max-width: 767px) {
+    header h1, header i {
+        font-size: 22px;
+    }
+    button.primary-btn {
+        padding: 5px;
+        font-size: 12px;
+    }
+    .books_container .card .reserved::after {
+        font-size: 3rem;
+    }
+}
