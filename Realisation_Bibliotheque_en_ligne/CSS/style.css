@@ -264,34 +264,34 @@ header i {
 }
 
 /* expensive card */
-
 .expensive {
-    background: linear-gradient(135deg, #1a1a1a, #3b2f00 40%, #8b7500 80%, #1a1a1a);
-    border: 2px solid #ffd700;
-    box-shadow:
-        0 0 30px rgba(255, 215, 0, 0.6),
-        inset 0 0 10px rgba(255, 255, 255, 0.2),
-        0 0 60px rgba(255, 215, 0, 0.4);
+    background: linear-gradient(135deg, #2b1900 0%, #4a2a00 40%, #8c5a00 80%, #ffcc00 100%);
+    border: 2px solid #ffcc33 !important;
+    /* border-radius: 18px; */
     padding: 25px;
     text-align: center;
-    color: #fffbe6;
+    color: #fff6da;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     position: relative;
     overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: all 0.5s ease;
+    box-shadow:
+        0 0 25px rgba(255, 180, 0, 0.5),
+        inset 0 0 15px rgba(255, 200, 50, 0.2),
+        0 0 80px rgba(255, 160, 0, 0.4);
 }
 
 .expensive::before {
     content: "";
     position: absolute;
     top: 0;
-    left: -75%;
+    left: -60%;
     width: 50%;
     height: 100%;
     background: linear-gradient(120deg,
             rgba(255, 255, 255, 0.2),
-            rgba(255, 255, 255, 0.8),
+            rgba(255, 230, 150, 0.8),
             rgba(255, 255, 255, 0.2));
     transform: skewX(-25deg);
     transition: 0.8s;
@@ -299,19 +299,75 @@ header i {
 
 .expensive:hover::before {
     left: 130%;
-    transition: 0.8s;
 }
 
 .expensive:hover {
-    transform: scale(1.05);
+    transform: translateY(-6px) scale(1.03);
     box-shadow:
-        0 0 40px rgba(255, 215, 0, 0.9),
-        0 0 80px rgba(255, 215, 0, 0.6);
+        0 0 45px rgba(255, 200, 0, 0.9),
+        0 0 100px rgba(255, 150, 0, 0.7);
 }
 
-.books_container img:hover {
-    transform: none;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9), 0 0 20px var(--neon-blue);
+.expensive img {
+    border-radius: 12px;
+    width: 100%;
+    max-width: 200px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.expensive img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 35px rgba(255, 180, 0, 0.9);
+}
+
+.expensive h3 {
+    font-size: 22px !important;
+    margin-top: 15px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #ffda7a, #ffffff, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+.expensive .price {
+    margin-top: 10px;
+    background: rgba(255, 180, 0, 0.1);
+    border: 1px solid rgba(255, 220, 100, 0.6);
+    border-radius: 8px;
+    color: #fff0b0;
+    font-weight: 700;
+    padding: 8px 16px;
+    box-shadow:
+        inset 0 0 15px rgba(255, 230, 100, 0.2),
+        0 0 15px rgba(255, 200, 0, 0.3);
+}
+
+.expensive .to-book {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 10px 70px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #1a0e00;
+    background: linear-gradient(90deg, #ffec99, #ffd633, #ffec99);
+    border: 2px solid #ffcc33;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow:
+        0 0 18px rgba(255, 200, 0, 0.7),
+        inset 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.expensive .to-book:hover {
+    background: linear-gradient(90deg, #fff6cc, #ffeb66, #fff6cc);
+    color: #000;
+    transform: scale(1.05);
+    box-shadow:
+        0 0 30px rgba(255, 220, 0, 0.9),
+        inset 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 /* Card title */
