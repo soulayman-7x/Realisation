@@ -369,6 +369,28 @@ header i {
         inset 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
+/*free book*/
+.free::after {
+    content: "FREE";
+    position: absolute;
+    top: 15px; 
+    right: -15px; 
+    padding: 5px 20px;
+    
+    background: linear-gradient(45deg, #FF007F, #FFD700); /* تدرج زهري/ذهبي زاهي */
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.8), inset 0 0 5px rgba(255, 255, 255, 0.5);
+    text-shadow: 0 0 5px #ffffff;
+    transform: rotate(45deg);   
+    border-radius: 0 5px 5px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    z-index: 10;
+}
+
 /* Card title */
 .books_container .card h3 {
     font-size: 22px;
