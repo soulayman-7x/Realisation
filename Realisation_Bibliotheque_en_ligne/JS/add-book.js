@@ -14,26 +14,30 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
         image: document.getElementById('image').value.trim() || '../BOOKS/Dune.png'
     };
 
-    const imageInput = document.getElementById('image');
-    const imagePath = imageInput.value.split('\\').pop();
+    const fileInput = document.getElementById('image');
+    const file = fileInput.files[0]; //The first image selected by the user
 
-    if (imagePath) {
-        book.image = 'BOOKS/' + imagePath;
-    } else {
+    if (file) {
+        const reader = new FileReader(); //To create an object that reads image content from the user's device
+        reader.onload = function (event) {
+            book.image = event.target.result;
+            saveBook(book);
+        };
+        reader.readAsDataURL(file); //Convert the file to DATA
+        return;
         book.image = '../BOOKS/default.png';
     }
 
-    // duplicate codes Checking 
-    const existingBook = library.find(b => b.code === book.code);
+    function saveBook(book) {
+        const existingBook = library.find(b => b.code === book.code);
+        if (existingBook) {
+            alert("⚠️This code has already been used! Choose another code.");
+            return;
+        }
 
-    if (existingBook) {
-        alert("⚠️This code has already been used! Choose another code.");
-        return;
+        library.push(book);
+        localStorage.setItem('library', JSON.stringify(library));
+        alert('book added successfully!!');
+        document.getElementById('book-form').reset();
     }
-
-    library.push(book);
-    localStorage.setItem('library', JSON.stringify(library));
-
-    alert('book added successfully!!');
-    this.reset();
 });
