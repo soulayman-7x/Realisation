@@ -23,8 +23,6 @@ document.getElementById('book-form').addEventListener('submit', function (e) {
         book.image = '../BOOKS/default.png';
     }
 
-
-
     // duplicate codes Checking 
     const existingBook = library.find(b => b.code === book.code);
 
